@@ -188,13 +188,16 @@ internal class SqlClientContext : IDapperContext
         {
             if (disposing)
             {
-                if (connection.State is ConnectionState.Open)
+                if (connection != null)
                 {
-                    await connection.CloseAsync();
-                }
+                    if (connection.State is ConnectionState.Open)
+                    {
+                        await connection.CloseAsync();
+                    }
 
-                await connection.DisposeAsync();
-                connection = null!;
+                    await connection.DisposeAsync();
+                    connection = null!;
+                }
             }
 
             disposed = true;
