@@ -6,7 +6,7 @@ public interface IDapperContext : IDisposable, IAsyncDisposable
 {
     Task<IDataReader> ExecuteReaderAsync(string sql, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null);
 
-    Task<IEnumerable<T>> GetDataAsync<T>(string sql, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null)
+    Task<IEnumerable<T>?> GetDataAsync<T>(string sql, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null)
         where T : class;
 
     Task<IEnumerable<TReturn>?> GetDataAsync<TFirst, TSecond, TReturn>(string sql, Func<TFirst, TSecond, TReturn> map, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null, string splitOn = "Id")
@@ -30,7 +30,7 @@ public interface IDapperContext : IDisposable, IAsyncDisposable
     Task<T?> GetObjectAsync<T>(string sql, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null)
         where T : class;
 
-    Task<TReturn> GetObjectAsync<TFirst, TSecond, TReturn>(string sql, Func<TFirst, TSecond, TReturn> map, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null, string splitOn = "Id")
+    Task<TReturn?> GetObjectAsync<TFirst, TSecond, TReturn>(string sql, Func<TFirst, TSecond, TReturn> map, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null, string splitOn = "Id")
         where TFirst : class
         where TSecond : class
         where TReturn : class;
@@ -48,7 +48,7 @@ public interface IDapperContext : IDisposable, IAsyncDisposable
         where TFourth : class
         where TReturn : class;
 
-    Task<T> GetSingleValueAsync<T>(string sql, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null);
+    Task<T?> GetSingleValueAsync<T>(string sql, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null);
 
     Task<int> ExecuteAsync(string sql, object? param = null, IDbTransaction? transaction = null, CommandType? commandType = null);
 
