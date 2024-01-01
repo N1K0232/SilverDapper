@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{D25D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverDapper.Abstractions", "src\SilverDapper.Abstractions\SilverDapper.Abstractions.csproj", "{EBCE1FD3-1600-45D4-929F-D9E4FBBFF53F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverDapper.SqlClient", "src\SilverDapper.SqlClient\SilverDapper.SqlClient.csproj", "{C3072357-F0A6-4272-9225-C91BFDC21F1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,11 +26,19 @@ Global
 		{EBCE1FD3-1600-45D4-929F-D9E4FBBFF53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBCE1FD3-1600-45D4-929F-D9E4FBBFF53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBCE1FD3-1600-45D4-929F-D9E4FBBFF53F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3072357-F0A6-4272-9225-C91BFDC21F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3072357-F0A6-4272-9225-C91BFDC21F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3072357-F0A6-4272-9225-C91BFDC21F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3072357-F0A6-4272-9225-C91BFDC21F1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EBCE1FD3-1600-45D4-929F-D9E4FBBFF53F} = {EB4D91FB-FA7E-4806-B98F-18A3E27141CB}
+		{C3072357-F0A6-4272-9225-C91BFDC21F1D} = {EB4D91FB-FA7E-4806-B98F-18A3E27141CB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74AE4BF4-CF1D-4445-99D7-46D3621131E5}
 	EndGlobalSection
 EndGlobal
