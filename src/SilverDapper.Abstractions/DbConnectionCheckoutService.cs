@@ -10,7 +10,7 @@ internal class DbConnectionCheckoutService : BackgroundService
     private readonly IServiceProvider serviceProvider;
     private readonly ILogger<DbConnectionCheckoutService> logger;
 
-    private PeriodicTimer timer = new PeriodicTimer(TimeSpan.FromHours(1));
+    private PeriodicTimer timer = null!;
 
     public DbConnectionCheckoutService(IServiceProvider serviceProvider, ILogger<DbConnectionCheckoutService> logger)
     {
@@ -22,6 +22,12 @@ internal class DbConnectionCheckoutService : BackgroundService
     {
         timer = null!;
         base.Dispose();
+    }
+
+    public override async Task StartAsync(CancellationToken cancellationToken)
+    {
+        timer = new PeriodicTimer(TimeSpan.FromHours(1));
+        await base.StartAsync(cancellationToken);
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
